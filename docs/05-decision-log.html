@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>결정 로그 | 멍냥우편함</title>
+  <style>
+:root { --bg:#fff8f3; --paper:#fffdf9; --line:#ecd8c8; --text:#37271f; --muted:#897569; --accent:#ff715e; --brown:#6b4b35; --soft:#fff0e7; --shadow:0 22px 70px rgba(86,52,30,.12); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 0% 0%, #ffe1cd, transparent 32%), linear-gradient(180deg,#fffdfb,var(--bg)); line-height:1.78; }
+.layout { display:grid; grid-template-columns:280px minmax(0, 880px); gap:34px; max-width:1240px; margin:0 auto; padding:34px 22px 80px; }
+aside { position:sticky; top:20px; align-self:start; background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:28px; padding:20px; box-shadow:var(--shadow); max-height:calc(100vh - 40px); overflow:auto; }
+aside h2 { font-size:16px; margin:0 0 12px; color:var(--brown); }
+aside a { display:block; color:var(--muted); text-decoration:none; padding:7px 0; font-weight:700; font-size:14px; }
+aside a.level-3 { padding-left:14px; font-size:13px; font-weight:600; }
+aside a:hover { color:var(--accent); }
+.back { display:inline-block; margin-bottom:18px; color:var(--brown); text-decoration:none; border:1px solid var(--line); background:white; padding:9px 13px; border-radius:999px; font-weight:900; }
+article { background:rgba(255,253,249,.92); border:1px solid var(--line); border-radius:34px; padding:48px; box-shadow:var(--shadow); }
+h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; letter-spacing:-.06em; color:var(--brown); margin:0 0 22px; }
+h2 { margin-top:56px; color:var(--brown); font-size:30px; letter-spacing:-.04em; border-top:1px solid var(--line); padding-top:34px; }
+h3 { margin-top:34px; color:#7a5338; font-size:22px; letter-spacing:-.03em; }
+p { margin:14px 0; }
+blockquote { margin:16px 0 28px; padding:16px 20px; border-left:5px solid var(--accent); background:var(--soft); border-radius:18px; color:var(--brown); font-weight:700; }
+ul { padding-left:22px; }
+li { margin:6px 0; }
+pre { background:#2f241e; color:#fff4ec; padding:20px; border-radius:20px; overflow:auto; line-height:1.6; }
+code { font-family:"SFMono-Regular",Consolas,monospace; }
+p code, li code { background:var(--soft); color:#a84b39; padding:2px 6px; border-radius:8px; }
+strong { color:#b64f3f; }
+@media (max-width: 900px) { .layout { display:block; padding:18px 14px 60px; } aside { position:relative; top:auto; margin-bottom:18px; max-height:none; } article { padding:28px 20px; border-radius:26px; } }
+@media print { body { background:white; } aside, .back { display:none; } .layout { display:block; padding:0; } article { box-shadow:none; border:none; padding:0; } h2 { page-break-after:avoid; } }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <h2>문서 목차</h2>
+      <a class="level-2" href="#결정-원칙">결정 원칙</a>
+<a class="level-2" href="#2026-06-04-결정">2026-06-04 결정</a>
+<a class="level-3" href="#1-서비스-정체성">1. 서비스 정체성</a>
+<a class="level-3" href="#2-mvp-발송-주기">2. MVP 발송 주기</a>
+<a class="level-3" href="#3-콘텐츠-검토-방식">3. 콘텐츠 검토 방식</a>
+<a class="level-3" href="#4-반응-방식">4. 반응 방식</a>
+<a class="level-3" href="#5-익명성">5. 익명성</a>
+<a class="level-2" href="#보류-결정">보류 결정</a>
+<a class="level-3" href="#닉네임-표시-여부">닉네임 표시 여부</a>
+<a class="level-3" href="#발송-자동화-수준">발송 자동화 수준</a>
+<a class="level-3" href="#ai-이미지-검토-보조">AI 이미지 검토 보조</a>
+    </aside>
+    <article>
+      <a class="back" href="../docs.html">← 기획 문서 목록</a>
+      <h1 id="결정-로그">결정 로그</h1>
+<p>멍냥우편함 기획/정책/구현 중 흔들릴 수 있는 결정을 기록합니다.</p>
+<h2 id="결정-원칙">결정 원칙</h2>
+<p>결정은 다음 형식으로 남깁니다.</p>
+<pre><code>날짜:
+결정:
+이유:
+대안:
+영향:
+상태:</code></pre>
+<h2 id="2026-06-04-결정">2026-06-04 결정</h2>
+<h3 id="1-서비스-정체성">1. 서비스 정체성</h3>
+<p>날짜: 2026-06-04</p>
+<p>결정: 멍냥우편함은 동물 사진 SNS가 아니라, 귀여운 동물 사진을 이메일 우편처럼 받아보는 서비스로 정의합니다.</p>
+<p>이유: 피드, 댓글, 랭킹 중심으로 가면 기존 SNS와 차별점이 약해지고 서비스 정서가 흐려집니다.</p>
+<p>대안: 동물 사진 공유 SNS, 반려동물 커뮤니티, 사진 피드 서비스.</p>
+<p>영향: 공개 피드, 댓글, 팔로우, 랭킹은 MVP에서 제외합니다.</p>
+<p>상태: 확정</p>
+<p>---</p>
+<h3 id="2-mvp-발송-주기">2. MVP 발송 주기</h3>
+<p>날짜: 2026-06-04</p>
+<p>결정: 서비스 비전은 “매일 아침”으로 표현하되, MVP 운영은 주 3회 또는 테스트 그룹 대상 정기 발송으로 시작합니다.</p>
+<p>이유: 매일 발송은 운영 부담과 콘텐츠 수급 부담이 큽니다. MVP에서는 경험 검증이 우선입니다.</p>
+<p>대안: 처음부터 매일 발송, 사용자가 직접 빈도 선택, 비정기 발송.</p>
+<p>영향: 랜딩 문구는 “아침 우편” 정서를 유지하되, 신청 시 실제 발송 주기를 명확히 안내해야 합니다.</p>
+<p>상태: 추천 확정안</p>
+<p>---</p>
+<h3 id="3-콘텐츠-검토-방식">3. 콘텐츠 검토 방식</h3>
+<p>날짜: 2026-06-04</p>
+<p>결정: MVP에서는 운영자 수동 검토를 기본으로 합니다. AI 자동 검토는 보조 기능 또는 이후 단계로 둡니다.</p>
+<p>이유: 사진 권리, 부적절 이미지, 동물 학대 의심 이미지는 자동 판정만으로 처리하기 어렵습니다.</p>
+<p>대안: 완전 자동 필터링, 신고 후 사후 처리만 하기.</p>
+<p>영향: 운영자 검토 화면이 MVP 1순위에 포함됩니다.</p>
+<p>상태: 확정</p>
+<p>---</p>
+<h3 id="4-반응-방식">4. 반응 방식</h3>
+<p>날짜: 2026-06-04</p>
+<p>결정: 자유 댓글 대신 3~5개 버튼 반응만 제공합니다.</p>
+<p>이유: 댓글은 커뮤니티화와 갈등, 평가 부담을 만듭니다. 버튼 반응은 우편을 잘 받았다는 가벼운 신호로 충분합니다.</p>
+<p>대안: 좋아요 1개만 제공, 자유 댓글 제공, 이모지 반응 제공.</p>
+<p>영향: 반응은 공개 랭킹이나 인기순 정렬에 사용하지 않습니다.</p>
+<p>상태: 확정</p>
+<p>---</p>
+<h3 id="5-익명성">5. 익명성</h3>
+<p>날짜: 2026-06-04</p>
+<p>결정: 업로드자는 특정 수신자를 알 수 없고, 수신자는 업로드자의 상세 프로필을 보지 않습니다.</p>
+<p>이유: 관계 형성보다 조용한 우편 경험이 핵심입니다. 사용자 간 연결을 열면 DM/팔로우/커뮤니티로 확장될 가능성이 커집니다.</p>
+<p>대안: 닉네임 공개, 프로필 공개, 팔로우 허용.</p>
+<p>영향: MVP에서는 상세 프로필과 사용자 간 연결 기능을 제외합니다.</p>
+<p>상태: 확정</p>
+<h2 id="보류-결정">보류 결정</h2>
+<h3 id="닉네임-표시-여부">닉네임 표시 여부</h3>
+<p>상태: 보류</p>
+<p>사진 설명에 업로드자 닉네임을 표시할지 아직 결정하지 않습니다. 표시하더라도 팔로우/프로필로 이어지지 않게 해야 합니다.</p>
+<h3 id="발송-자동화-수준">발송 자동화 수준</h3>
+<p>상태: 보류</p>
+<p>MVP 초기에는 mock 또는 테스트 발송으로 검증하고, 실제 자동 발송은 운영자 승인 흐름이 준비된 후 결정합니다.</p>
+<h3 id="ai-이미지-검토-보조">AI 이미지 검토 보조</h3>
+<p>상태: 보류</p>
+<p>AI 검토는 안전 보조로 쓸 수 있지만, MVP 핵심 기능은 아닙니다. 자동 삭제 결정을 AI에 맡기지 않습니다.</p>
+    </article>
+  </div>
+</body>
+</html>

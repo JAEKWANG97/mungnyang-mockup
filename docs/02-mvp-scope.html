@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MVP 범위 | 멍냥우편함</title>
+  <style>
+:root { --bg:#fff8f3; --paper:#fffdf9; --line:#ecd8c8; --text:#37271f; --muted:#897569; --accent:#ff715e; --brown:#6b4b35; --soft:#fff0e7; --shadow:0 22px 70px rgba(86,52,30,.12); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 0% 0%, #ffe1cd, transparent 32%), linear-gradient(180deg,#fffdfb,var(--bg)); line-height:1.78; }
+.layout { display:grid; grid-template-columns:280px minmax(0, 880px); gap:34px; max-width:1240px; margin:0 auto; padding:34px 22px 80px; }
+aside { position:sticky; top:20px; align-self:start; background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:28px; padding:20px; box-shadow:var(--shadow); max-height:calc(100vh - 40px); overflow:auto; }
+aside h2 { font-size:16px; margin:0 0 12px; color:var(--brown); }
+aside a { display:block; color:var(--muted); text-decoration:none; padding:7px 0; font-weight:700; font-size:14px; }
+aside a.level-3 { padding-left:14px; font-size:13px; font-weight:600; }
+aside a:hover { color:var(--accent); }
+.back { display:inline-block; margin-bottom:18px; color:var(--brown); text-decoration:none; border:1px solid var(--line); background:white; padding:9px 13px; border-radius:999px; font-weight:900; }
+article { background:rgba(255,253,249,.92); border:1px solid var(--line); border-radius:34px; padding:48px; box-shadow:var(--shadow); }
+h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; letter-spacing:-.06em; color:var(--brown); margin:0 0 22px; }
+h2 { margin-top:56px; color:var(--brown); font-size:30px; letter-spacing:-.04em; border-top:1px solid var(--line); padding-top:34px; }
+h3 { margin-top:34px; color:#7a5338; font-size:22px; letter-spacing:-.03em; }
+p { margin:14px 0; }
+blockquote { margin:16px 0 28px; padding:16px 20px; border-left:5px solid var(--accent); background:var(--soft); border-radius:18px; color:var(--brown); font-weight:700; }
+ul { padding-left:22px; }
+li { margin:6px 0; }
+pre { background:#2f241e; color:#fff4ec; padding:20px; border-radius:20px; overflow:auto; line-height:1.6; }
+code { font-family:"SFMono-Regular",Consolas,monospace; }
+p code, li code { background:var(--soft); color:#a84b39; padding:2px 6px; border-radius:8px; }
+strong { color:#b64f3f; }
+@media (max-width: 900px) { .layout { display:block; padding:18px 14px 60px; } aside { position:relative; top:auto; margin-bottom:18px; max-height:none; } article { padding:28px 20px; border-radius:26px; } }
+@media print { body { background:white; } aside, .back { display:none; } .layout { display:block; padding:0; } article { box-shadow:none; border:none; padding:0; } h2 { page-break-after:avoid; } }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <h2>문서 목차</h2>
+      <a class="level-2" href="#mvp-한-줄-정의">MVP 한 줄 정의</a>
+<a class="level-2" href="#mvp-목표">MVP 목표</a>
+<a class="level-2" href="#핵심-가설">핵심 가설</a>
+<a class="level-3" href="#1-수신-경험">1. 수신 경험</a>
+<a class="level-3" href="#2-업로드-경험">2. 업로드 경험</a>
+<a class="level-3" href="#3-운영-가능성">3. 운영 가능성</a>
+<a class="level-2" href="#mvp-포함-기능">MVP 포함 기능</a>
+<a class="level-3" href="#수신-신청">수신 신청</a>
+<a class="level-3" href="#사진-업로드">사진 업로드</a>
+<a class="level-3" href="#운영자-검토">운영자 검토</a>
+<a class="level-3" href="#이메일-발송">이메일 발송</a>
+<a class="level-3" href="#버튼-반응">버튼 반응</a>
+<a class="level-3" href="#기본-신고">기본 신고</a>
+<a class="level-2" href="#mvp-제외-기능">MVP 제외 기능</a>
+<a class="level-3" href="#커뮤니티-기능-제외">커뮤니티 기능 제외</a>
+<a class="level-3" href="#피드랭킹-기능-제외">피드/랭킹 기능 제외</a>
+<a class="level-3" href="#과한-개인화-제외">과한 개인화 제외</a>
+<a class="level-3" href="#운영-자동화-제외">운영 자동화 제외</a>
+<a class="level-2" href="#mvp-완료-기준">MVP 완료 기준</a>
+    </aside>
+    <article>
+      <a class="back" href="../docs.html">← 기획 문서 목록</a>
+      <h1 id="mvp-범위">MVP 범위</h1>
+<h2 id="mvp-한-줄-정의">MVP 한 줄 정의</h2>
+<p>MVP는 승인된 동물 사진 한 장을 정기 이메일로 보내고, 수신자가 버튼 반응만 남길 수 있는 최소 서비스입니다.</p>
+<h2 id="mvp-목표">MVP 목표</h2>
+<p>MVP의 목표는 기능이 많은 서비스를 만드는 것이 아닙니다.</p>
+<p>검증하려는 핵심 질문은 다음입니다.</p>
+<blockquote>사람들은 귀여운 동물 사진을 피드가 아니라 이메일 우편처럼 받아보는 경험을 계속 원할까?</blockquote>
+<h2 id="핵심-가설">핵심 가설</h2>
+<h3 id="1-수신-경험">1. 수신 경험</h3>
+<p>사용자는 앱에 들어가 피드를 소비하지 않아도, 이메일로 도착한 귀여운 동물 사진 한 장에 만족할 수 있습니다.</p>
+<p>검증 지표:</p>
+<ul>
+<li>이메일 오픈율</li>
+<li>버튼 반응률</li>
+<li>수신 유지율</li>
+<li>수신거부율</li>
+</ul>
+<h3 id="2-업로드-경험">2. 업로드 경험</h3>
+<p>업로드자는 공개 피드나 댓글이 없어도, 익명 반응만으로 사진을 올릴 이유를 느낄 수 있습니다.</p>
+<p>검증 지표:</p>
+<ul>
+<li>사진 업로드 수</li>
+<li>재업로드율</li>
+<li>반응 확인율</li>
+</ul>
+<h3 id="3-운영-가능성">3. 운영 가능성</h3>
+<p>운영자는 복잡한 자동화 없이도, 수동 검토와 기본 신고 흐름으로 안전한 사진 우편 경험을 유지할 수 있습니다.</p>
+<p>검증 지표:</p>
+<ul>
+<li>승인 대기 시간</li>
+<li>신고율</li>
+<li>부적절 이미지 처리 시간</li>
+<li>발송 실패율</li>
+</ul>
+<h2 id="mvp-포함-기능">MVP 포함 기능</h2>
+<h3 id="수신-신청">수신 신청</h3>
+<ul>
+<li>이메일 입력</li>
+<li>수신 동의 체크</li>
+<li>발송 주기 안내</li>
+<li>수신거부 안내</li>
+</ul>
+<p>MVP에서는 OAuth 로그인을 필수로 두지 않고, 이메일만으로 테스트 가능하게 시작합니다.</p>
+<h3 id="사진-업로드">사진 업로드</h3>
+<ul>
+<li>사진 업로드</li>
+<li>짧은 설명 입력</li>
+<li>직접 촬영/사용권 확인 체크</li>
+<li>콘텐츠 정책 동의</li>
+<li>검토 상태 표시</li>
+</ul>
+<p>한 번에 여러 장 업로드, 사진 편집, 필터 기능은 제외합니다.</p>
+<h3 id="운영자-검토">운영자 검토</h3>
+<ul>
+<li>업로드 사진 목록</li>
+<li>승인</li>
+<li>숨김</li>
+<li>반려</li>
+<li>신고 사진 확인</li>
+</ul>
+<p>MVP에서는 완전 자동 검열보다 운영자 수동 검토를 우선합니다. AI 검토는 후순위 보조 기능입니다.</p>
+<h3 id="이메일-발송">이메일 발송</h3>
+<ul>
+<li>승인된 사진 중 하나 선택</li>
+<li>이메일 템플릿 생성</li>
+<li>테스트 발송 또는 mock 발송</li>
+<li>실제 발송 전 승인</li>
+<li>발송 성공/실패 기록</li>
+</ul>
+<p>컨셉은 “매일 아침”이지만, MVP 운영은 주 3회 또는 테스트 그룹 발송으로 시작합니다.</p>
+<h3 id="버튼-반응">버튼 반응</h3>
+<ul>
+<li>수신 이메일에서 반응 버튼 클릭</li>
+<li>반응 저장</li>
+<li>업로드자에게 익명 누적 반응 제공</li>
+</ul>
+<p>허용 반응 예시:</p>
+<ul>
+<li>귀여워요</li>
+<li>아침이 좋아졌어요</li>
+<li>또 보고 싶어요</li>
+<li>웃겼어요</li>
+<li>따뜻해요</li>
+</ul>
+<h3 id="기본-신고">기본 신고</h3>
+<ul>
+<li>수신자가 사진 신고 가능</li>
+<li>신고된 사진 임시 숨김 가능</li>
+<li>운영자 검토 후 유지/숨김/삭제 결정</li>
+</ul>
+<h2 id="mvp-제외-기능">MVP 제외 기능</h2>
+<h3 id="커뮤니티-기능-제외">커뮤니티 기능 제외</h3>
+<ul>
+<li>댓글</li>
+<li>대댓글</li>
+<li>DM</li>
+<li>팔로우</li>
+<li>공개 프로필</li>
+<li>사용자 간 대화</li>
+</ul>
+<h3 id="피드랭킹-기능-제외">피드/랭킹 기능 제외</h3>
+<ul>
+<li>공개 피드</li>
+<li>인기 사진</li>
+<li>랭킹</li>
+<li>좋아요 순 정렬</li>
+<li>추천 탭</li>
+<li>무한 스크롤</li>
+</ul>
+<h3 id="과한-개인화-제외">과한 개인화 제외</h3>
+<ul>
+<li>복잡한 추천 알고리즘</li>
+<li>취향 기반 세분화</li>
+<li>AI 개인화 편지</li>
+<li>사용자 행동 기반 타겟팅</li>
+</ul>
+<h3 id="운영-자동화-제외">운영 자동화 제외</h3>
+<ul>
+<li>완전 자동 이미지 삭제</li>
+<li>무승인 대량 이메일 발송</li>
+<li>비용 발생 외부 서비스 자동 연동</li>
+</ul>
+<h2 id="mvp-완료-기준">MVP 완료 기준</h2>
+<ul>
+<li>수신자가 이메일 수신 신청을 할 수 있다.</li>
+<li>업로드자가 사진과 짧은 설명을 등록할 수 있다.</li>
+<li>운영자가 사진을 승인/숨김/반려할 수 있다.</li>
+<li>승인된 사진만 발송 후보가 된다.</li>
+<li>수신자에게 이메일 mock 또는 테스트 발송이 가능하다.</li>
+<li>수신자는 버튼 반응을 남길 수 있다.</li>
+<li>반응은 익명 누적 형태로 저장된다.</li>
+<li>수신거부 흐름이 존재한다.</li>
+<li>신고된 사진은 운영자 검토 대상으로 전환된다.</li>
+</ul>
+    </article>
+  </div>
+</body>
+</html>

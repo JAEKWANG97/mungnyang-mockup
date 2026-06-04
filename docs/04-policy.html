@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>정책과 검증 기준 | 멍냥우편함</title>
+  <style>
+:root { --bg:#fff8f3; --paper:#fffdf9; --line:#ecd8c8; --text:#37271f; --muted:#897569; --accent:#ff715e; --brown:#6b4b35; --soft:#fff0e7; --shadow:0 22px 70px rgba(86,52,30,.12); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 0% 0%, #ffe1cd, transparent 32%), linear-gradient(180deg,#fffdfb,var(--bg)); line-height:1.78; }
+.layout { display:grid; grid-template-columns:280px minmax(0, 880px); gap:34px; max-width:1240px; margin:0 auto; padding:34px 22px 80px; }
+aside { position:sticky; top:20px; align-self:start; background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:28px; padding:20px; box-shadow:var(--shadow); max-height:calc(100vh - 40px); overflow:auto; }
+aside h2 { font-size:16px; margin:0 0 12px; color:var(--brown); }
+aside a { display:block; color:var(--muted); text-decoration:none; padding:7px 0; font-weight:700; font-size:14px; }
+aside a.level-3 { padding-left:14px; font-size:13px; font-weight:600; }
+aside a:hover { color:var(--accent); }
+.back { display:inline-block; margin-bottom:18px; color:var(--brown); text-decoration:none; border:1px solid var(--line); background:white; padding:9px 13px; border-radius:999px; font-weight:900; }
+article { background:rgba(255,253,249,.92); border:1px solid var(--line); border-radius:34px; padding:48px; box-shadow:var(--shadow); }
+h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; letter-spacing:-.06em; color:var(--brown); margin:0 0 22px; }
+h2 { margin-top:56px; color:var(--brown); font-size:30px; letter-spacing:-.04em; border-top:1px solid var(--line); padding-top:34px; }
+h3 { margin-top:34px; color:#7a5338; font-size:22px; letter-spacing:-.03em; }
+p { margin:14px 0; }
+blockquote { margin:16px 0 28px; padding:16px 20px; border-left:5px solid var(--accent); background:var(--soft); border-radius:18px; color:var(--brown); font-weight:700; }
+ul { padding-left:22px; }
+li { margin:6px 0; }
+pre { background:#2f241e; color:#fff4ec; padding:20px; border-radius:20px; overflow:auto; line-height:1.6; }
+code { font-family:"SFMono-Regular",Consolas,monospace; }
+p code, li code { background:var(--soft); color:#a84b39; padding:2px 6px; border-radius:8px; }
+strong { color:#b64f3f; }
+@media (max-width: 900px) { .layout { display:block; padding:18px 14px 60px; } aside { position:relative; top:auto; margin-bottom:18px; max-height:none; } article { padding:28px 20px; border-radius:26px; } }
+@media print { body { background:white; } aside, .back { display:none; } .layout { display:block; padding:0; } article { box-shadow:none; border:none; padding:0; } h2 { page-break-after:avoid; } }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <h2>문서 목차</h2>
+      <a class="level-2" href="#콘텐츠-정책">콘텐츠 정책</a>
+<a class="level-3" href="#허용">허용</a>
+<a class="level-3" href="#제한-또는-반려">제한 또는 반려</a>
+<a class="level-3" href="#mvp-결정">MVP 결정</a>
+<a class="level-2" href="#이메일-정책">이메일 정책</a>
+<a class="level-3" href="#필수-원칙">필수 원칙</a>
+<a class="level-3" href="#mvp-발송-정책">MVP 발송 정책</a>
+<a class="level-3" href="#이메일-하단-필수-요소">이메일 하단 필수 요소</a>
+<a class="level-2" href="#반응-정책">반응 정책</a>
+<a class="level-3" href="#허용-반응">허용 반응</a>
+<a class="level-3" href="#금지-반응-구조">금지 반응 구조</a>
+<a class="level-3" href="#반응-공개-범위">반응 공개 범위</a>
+<a class="level-2" href="#개인정보안전-원칙">개인정보/안전 원칙</a>
+<a class="level-3" href="#이메일-주소">이메일 주소</a>
+<a class="level-3" href="#업로드자-정보">업로드자 정보</a>
+<a class="level-3" href="#수신자-정보">수신자 정보</a>
+<a class="level-2" href="#사람-승인-필요-지점">사람 승인 필요 지점</a>
+<a class="level-2" href="#출시-전-통과-기준">출시 전 통과 기준</a>
+    </aside>
+    <article>
+      <a class="back" href="../docs.html">← 기획 문서 목록</a>
+      <h1 id="정책과-검증-기준">정책과 검증 기준</h1>
+<p>멍냥우편함은 사진과 이메일을 다루기 때문에 정책이 나중 일이 아닙니다. 정책이 없으면 무단 이미지 업로드, 부적절 이미지 발송, 스팸성 이메일 발송, 신고 대응 실패가 발생할 수 있습니다.</p>
+<h2 id="콘텐츠-정책">콘텐츠 정책</h2>
+<h3 id="허용">허용</h3>
+<ul>
+<li>직접 촬영한 동물 사진</li>
+<li>사용권을 확보한 동물 사진</li>
+<li>사람 얼굴이 중심이 아닌 사진</li>
+<li>짧고 무해한 설명 문구</li>
+</ul>
+<h3 id="제한-또는-반려">제한 또는 반려</h3>
+<ul>
+<li>인터넷에서 퍼온 출처 불명 이미지</li>
+<li>사람 얼굴이 중심인 사진</li>
+<li>저작권이 불명확한 이미지</li>
+<li>동물 학대가 의심되는 이미지</li>
+<li>폭력적, 혐오적, 선정적 이미지</li>
+<li>불쾌감이나 공포감을 유발할 수 있는 이미지</li>
+<li>개인정보가 노출된 이미지</li>
+</ul>
+<h3 id="mvp-결정">MVP 결정</h3>
+<ul>
+<li>MVP에서는 직접 촬영했거나 사용권이 있는 사진만 허용합니다.</li>
+<li>모든 사진은 발송 후보가 되기 전에 운영자 검토를 거칩니다.</li>
+<li>신고된 사진은 임시 숨김 상태로 전환할 수 있습니다.</li>
+<li>자동 삭제보다 운영자 검토를 우선합니다.</li>
+</ul>
+<h2 id="이메일-정책">이메일 정책</h2>
+<h3 id="필수-원칙">필수 원칙</h3>
+<ul>
+<li>명시적 수신 동의가 있어야 합니다.</li>
+<li>모든 이메일에 수신거부 방법이 있어야 합니다.</li>
+<li>발송 빈도와 목적을 신청 시점에 안내합니다.</li>
+<li>실제 발송 전 미리보기와 테스트 발송을 둡니다.</li>
+<li>광고성/상업성 문구보다 우편 경험을 우선합니다.</li>
+</ul>
+<h3 id="mvp-발송-정책">MVP 발송 정책</h3>
+<ul>
+<li>컨셉 문장: 매일 아침 도착하는 귀여운 우편함</li>
+<li>MVP 운영: 주 3회 또는 테스트 그룹 대상 정기 발송</li>
+<li>실제 발송: 운영자 승인 후 진행</li>
+<li>자동 대량 발송: MVP에서는 보류</li>
+</ul>
+<h3 id="이메일-하단-필수-요소">이메일 하단 필수 요소</h3>
+<ul>
+<li>수신거부 링크</li>
+<li>신고 링크</li>
+<li>서비스 설명 링크</li>
+<li>발송 주기 안내</li>
+</ul>
+<h2 id="반응-정책">반응 정책</h2>
+<h3 id="허용-반응">허용 반응</h3>
+<ul>
+<li>귀여워요</li>
+<li>아침이 좋아졌어요</li>
+<li>또 보고 싶어요</li>
+<li>웃겼어요</li>
+<li>따뜻해요</li>
+</ul>
+<h3 id="금지-반응-구조">금지 반응 구조</h3>
+<ul>
+<li>자유 댓글</li>
+<li>싫어요</li>
+<li>점수 평가</li>
+<li>비교성 반응</li>
+<li>공개 좋아요 수</li>
+<li>인기순 랭킹</li>
+</ul>
+<h3 id="반응-공개-범위">반응 공개 범위</h3>
+<ul>
+<li>업로드자는 익명 누적 반응만 볼 수 있습니다.</li>
+<li>수신자 개인 정보는 업로드자에게 노출하지 않습니다.</li>
+<li>반응 수는 공개 랭킹이나 추천 정렬에 사용하지 않습니다.</li>
+<li>운영자는 서비스 상태 파악을 위해 전체 지표를 볼 수 있습니다.</li>
+</ul>
+<h2 id="개인정보안전-원칙">개인정보/안전 원칙</h2>
+<h3 id="이메일-주소">이메일 주소</h3>
+<ul>
+<li>수신 목적 외로 사용하지 않습니다.</li>
+<li>업로드자에게 수신자 이메일을 노출하지 않습니다.</li>
+<li>수신거부 시 발송 대상에서 제외합니다.</li>
+</ul>
+<h3 id="업로드자-정보">업로드자 정보</h3>
+<ul>
+<li>MVP에서는 상세 프로필을 만들지 않습니다.</li>
+<li>닉네임 표시는 선택 또는 보류합니다.</li>
+<li>업로드자가 특정 수신자를 알 수 없게 합니다.</li>
+</ul>
+<h3 id="수신자-정보">수신자 정보</h3>
+<ul>
+<li>수신자의 반응은 익명 누적으로만 처리합니다.</li>
+<li>업로드자에게 개별 수신자 정보는 제공하지 않습니다.</li>
+</ul>
+<h2 id="사람-승인-필요-지점">사람 승인 필요 지점</h2>
+<ul>
+<li>사진이 발송 후보로 등록되기 전</li>
+<li>실제 이메일 발송 전</li>
+<li>신고 사진의 유지/숨김/삭제 결정</li>
+<li>이미지 자동 판정 정책 변경</li>
+<li>외부 메일 발송 서비스 연동</li>
+<li>개인정보 처리 방식 변경</li>
+<li>공개 배포 전</li>
+</ul>
+<h2 id="출시-전-통과-기준">출시 전 통과 기준</h2>
+<ul>
+<li>MVP 제외 기능이 구현되지 않았다.</li>
+<li>콘텐츠 정책 동의가 업로드 흐름에 있다.</li>
+<li>수신 동의와 수신거부가 있다.</li>
+<li>운영자 검토 없이 사진이 발송되지 않는다.</li>
+<li>실제 발송 전 미리보기/테스트 발송이 가능하다.</li>
+<li>신고 흐름이 있다.</li>
+<li>버튼 반응은 댓글이나 점수로 확장되지 않는다.</li>
+</ul>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>멍냥우편함 서비스 기획 | 멍냥우편함</title>
+  <style>
+:root { --bg:#fff8f3; --paper:#fffdf9; --line:#ecd8c8; --text:#37271f; --muted:#897569; --accent:#ff715e; --brown:#6b4b35; --soft:#fff0e7; --shadow:0 22px 70px rgba(86,52,30,.12); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 0% 0%, #ffe1cd, transparent 32%), linear-gradient(180deg,#fffdfb,var(--bg)); line-height:1.78; }
+.layout { display:grid; grid-template-columns:280px minmax(0, 880px); gap:34px; max-width:1240px; margin:0 auto; padding:34px 22px 80px; }
+aside { position:sticky; top:20px; align-self:start; background:rgba(255,255,255,.78); border:1px solid var(--line); border-radius:28px; padding:20px; box-shadow:var(--shadow); max-height:calc(100vh - 40px); overflow:auto; }
+aside h2 { font-size:16px; margin:0 0 12px; color:var(--brown); }
+aside a { display:block; color:var(--muted); text-decoration:none; padding:7px 0; font-weight:700; font-size:14px; }
+aside a.level-3 { padding-left:14px; font-size:13px; font-weight:600; }
+aside a:hover { color:var(--accent); }
+.back { display:inline-block; margin-bottom:18px; color:var(--brown); text-decoration:none; border:1px solid var(--line); background:white; padding:9px 13px; border-radius:999px; font-weight:900; }
+article { background:rgba(255,253,249,.92); border:1px solid var(--line); border-radius:34px; padding:48px; box-shadow:var(--shadow); }
+h1 { font-size:clamp(34px,6vw,58px); line-height:1.08; letter-spacing:-.06em; color:var(--brown); margin:0 0 22px; }
+h2 { margin-top:56px; color:var(--brown); font-size:30px; letter-spacing:-.04em; border-top:1px solid var(--line); padding-top:34px; }
+h3 { margin-top:34px; color:#7a5338; font-size:22px; letter-spacing:-.03em; }
+p { margin:14px 0; }
+blockquote { margin:16px 0 28px; padding:16px 20px; border-left:5px solid var(--accent); background:var(--soft); border-radius:18px; color:var(--brown); font-weight:700; }
+ul { padding-left:22px; }
+li { margin:6px 0; }
+pre { background:#2f241e; color:#fff4ec; padding:20px; border-radius:20px; overflow:auto; line-height:1.6; }
+code { font-family:"SFMono-Regular",Consolas,monospace; }
+p code, li code { background:var(--soft); color:#a84b39; padding:2px 6px; border-radius:8px; }
+strong { color:#b64f3f; }
+@media (max-width: 900px) { .layout { display:block; padding:18px 14px 60px; } aside { position:relative; top:auto; margin-bottom:18px; max-height:none; } article { padding:28px 20px; border-radius:26px; } }
+@media print { body { background:white; } aside, .back { display:none; } .layout { display:block; padding:0; } article { box-shadow:none; border:none; padding:0; } h2 { page-break-after:avoid; } }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <h2>문서 목차</h2>
+      <a class="level-2" href="#핵심-정의">핵심 정의</a>
+<a class="level-2" href="#핵심-가치">핵심 가치</a>
+<a class="level-2" href="#mvp-사용자">MVP 사용자</a>
+<a class="level-3" href="#수신자">수신자</a>
+<a class="level-3" href="#업로드자">업로드자</a>
+<a class="level-3" href="#운영자">운영자</a>
+<a class="level-2" href="#서비스가-피하려는-방향">서비스가 피하려는 방향</a>
+<a class="level-2" href="#검증-질문">검증 질문</a>
+    </aside>
+    <article>
+      <a class="back" href="../docs.html">← 기획 문서 목록</a>
+      <h1 id="멍냥우편함-서비스-기획">멍냥우편함 서비스 기획</h1>
+<p>멍냥우편함은 SNS 피드 없이, 귀여운 동물 사진을 정기 이메일 우편처럼 받아보고, 댓글 대신 버튼 반응만 남기는 익명 동물 사진 우편 서비스입니다.</p>
+<h2 id="핵심-정의">핵심 정의</h2>
+<p>멍냥우편함의 핵심은 “우리 애 자랑 피드”가 아니라, 내가 발견한 작은 귀여움을 누군가의 하루 시작에 조용히 보내는 경험입니다.</p>
+<h2 id="핵심-가치">핵심 가치</h2>
+<p>사용자는 누군가가 올린 귀여운 동물 사진을 피드에서 계속 소비하는 것이 아니라, 아침 또는 정해진 시간에 우편처럼 받아봅니다.</p>
+<p>서비스가 만들고 싶은 감정은 다음에 가깝습니다.</p>
+<ul>
+<li>오늘 아침 작은 귀여움이 도착했다.</li>
+<li>내가 올린 사진이 누군가의 하루를 조금 좋게 만들었다.</li>
+<li>댓글과 평가 없이 가볍게 반응만 남겼다.</li>
+</ul>
+<h2 id="mvp-사용자">MVP 사용자</h2>
+<h3 id="수신자">수신자</h3>
+<ul>
+<li>이메일 수신에 동의합니다.</li>
+<li>정해진 주기에 동물 사진 한 장을 받습니다.</li>
+<li>댓글 대신 버튼 반응만 남깁니다.</li>
+</ul>
+<h3 id="업로드자">업로드자</h3>
+<ul>
+<li>자기 반려동물 또는 사용권이 있는 동물 사진을 올립니다.</li>
+<li>사진에 짧은 설명을 붙일 수 있습니다.</li>
+<li>누가 받는지는 알 수 없습니다.</li>
+<li>받은 사람들의 익명 버튼 반응 정도만 확인합니다.</li>
+</ul>
+<h3 id="운영자">운영자</h3>
+<ul>
+<li>부적절 이미지, 무단 이미지, 신고 사진을 관리합니다.</li>
+<li>이메일 발송 실패와 수신거부를 관리합니다.</li>
+<li>서비스 톤과 정책을 유지합니다.</li>
+</ul>
+<h2 id="서비스가-피하려는-방향">서비스가 피하려는 방향</h2>
+<p>멍냥우편함은 동물 사진 서비스이지만, 일반적인 SNS가 되지 않는 것을 중요하게 봅니다.</p>
+<p>MVP에서 제외하는 방향은 다음과 같습니다.</p>
+<ul>
+<li>공개 피드</li>
+<li>댓글</li>
+<li>팔로우</li>
+<li>랭킹</li>
+<li>DM</li>
+<li>실시간 채팅</li>
+<li>인기순 추천</li>
+<li>자동 SNS 공유</li>
+</ul>
+<h2 id="검증-질문">검증 질문</h2>
+<ul>
+<li>이 서비스는 SNS처럼 보이지 않는가?</li>
+<li>받은 사람이 부담 없이 반응할 수 있는가?</li>
+<li>업로드자가 평가 경쟁을 느끼지 않는가?</li>
+<li>이메일이 스팸/광고처럼 보이지 않는가?</li>
+<li>무단 이미지와 부적절 이미지를 막을 수 있는가?</li>
+<li>운영자가 신고/숨김/발송 실패를 처리할 수 있는가?</li>
+</ul>
+    </article>
+  </div>
+</body>
+</html>
