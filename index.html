@@ -94,7 +94,8 @@
       flex-wrap: wrap;
     }
 
-    .nav button {
+    .nav button,
+    .nav .docs-nav-link {
       border: 0;
       background: transparent;
       color: #594237;
@@ -104,8 +105,9 @@
       cursor: pointer;
       transition: .18s ease;
       white-space: nowrap;
+      text-decoration: none;
     }
-    .nav button:hover { background: var(--soft); color: var(--accent); }
+    .nav button:hover, .nav .docs-nav-link:hover { background: var(--soft); color: var(--accent); }
     .nav button.active {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
@@ -810,6 +812,7 @@
           <button data-screen="settings">수신 설정</button>
           <button data-screen="admin">관리자 검수</button>
           <button data-screen="mobile">모바일</button>
+          <a class="docs-nav-link" href="docs.html">기획 문서</a>
         </nav>
         <div class="top-actions">
           <button class="icon-btn" aria-label="알림">🔔</button>
