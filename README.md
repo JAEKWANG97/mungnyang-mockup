@@ -14,6 +14,7 @@ SNS 없이 귀여운 동물 사진을 정기 이메일 우편처럼 받아보고
 - [핵심 사용자 흐름](docs/03-user-flow.md)
 - [정책과 검증 기준](docs/04-policy.md)
 - [결정 로그](docs/05-decision-log.md)
+- [하네스 엔지니어링 적용 총정리](docs/06-harness-engineering.html)
 
 ## 핵심 방향
 
